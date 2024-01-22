@@ -1,5 +1,5 @@
 import Header from "@/layout/Header";
-import { Box, Flex, HStack, defineStyle } from "@chakra-ui/react";
+import { Box, Flex, HStack, VStack, Heading, Link, Text, defineStyle } from "@chakra-ui/react";
 
 export function StyleGuide() {
 	const styles = defineStyle({
@@ -11,20 +11,84 @@ export function StyleGuide() {
 			w: "100%",
 			h: "100%",
 		},
+		title: {
+			fontSize: "18px",
+		},
 	});
 	return (
 		<Flex direction="column" gap="20" justify="space-between" alignItems="stretch">
 			<Header />
 			{/* <<--- header section --->>  */}
-			<HStack>
-				<HStack __css={styles.color_group} gap="10" justify="space-between" alignContent="stretch" alignItems="stretch">
-					<Box __css={styles.color_shape} bg="brand.300" border="solid 0.5px" borderColor="brand.100"></Box>
-					<Box __css={styles.color_shape} bg="brand.200"></Box>
-					<Box __css={styles.color_shape} bg="brand.100"></Box>
-				</HStack>
+
+			<HStack __css={styles.color_group} gap="10" justify="space-between" alignContent="stretch" alignItems="stretch">
+				<Box __css={styles.color_shape} bg="brand.300" border="solid 0.5px" borderColor="brand.100"></Box>
+				<Box __css={styles.color_shape} bg="brand.200"></Box>
+				<Box __css={styles.color_shape} bg="brand.100"></Box>
 			</HStack>
 			{/* <<--- color section --->>  */}
-			<HStack></HStack>
+			<HStack justifyContent="space-between" alignItems="startstart">
+				<VStack justifyContent="start" alignItems="start" gap="4">
+					<Box>
+						<Text sx={styles.title}>Heading 1</Text>
+						<Heading as="h1" variant="h1">
+							Earth
+						</Heading>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Heading 1</Text>
+						<Heading as="h2" variant="h2">
+							Venus
+						</Heading>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Heading 1</Text>
+						<Heading as="h3" variant="h3">
+							JUPITER & SATURN
+						</Heading>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Heading 1</Text>
+						<Heading as="h4" variant="h4">
+							URNAUS, NEPTUNE, & PLUTO
+						</Heading>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Heading 1</Text>
+						<Heading as="h5" variant="h5">
+							SO, YOU WANT TO TRAVEL TO SPACE
+						</Heading>
+					</Box>
+				</VStack>
+				{/* <<--- COLUMN --->> */}
+				<VStack w="50%" alignItems="start" gap="8">
+					<Box>
+						<Text sx={styles.title}>Subheading 1</Text>
+						<Heading as="h6" variant="subheader1">
+							384,400 km
+						</Heading>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Subheading 2</Text>
+						<Heading as="h6" variant="subheader2">
+							AVG. DISTANCE
+						</Heading>
+					</Box>
+					<Box>
+						<Box>
+							<Text sx={styles.title}>Nav text</Text>
+							<Link>EUROPA</Link>
+						</Box>
+					</Box>
+					<Box>
+						<Text sx={styles.title}>Body text</Text>
+						<Text>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut
+							justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu
+							nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+						</Text>
+					</Box>
+				</VStack>
+			</HStack>
 			{/* <<--- text section --->>  */}
 			<HStack></HStack>
 			{/* <<--- ui section --->>  */}
