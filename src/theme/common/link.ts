@@ -2,7 +2,7 @@
 export const linkStyles = {
   baseStyle: {
     fontSize: "16",
-    fontStyle: "condensed",
+    fontFamily: "condensed",
     fontWeight: "400",
     lineHeight: "1.1em",
     letterSpacing: "2.7px",
