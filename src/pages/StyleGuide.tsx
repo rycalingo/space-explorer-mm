@@ -1,5 +1,29 @@
-import Header from "@/layout/Header";
 import { Box, Flex, HStack, VStack, Heading, Link, Text, defineStyle } from "@chakra-ui/react";
+
+import Header from "@/layout/Header";
+import { Navbar } from "@/features";
+import { NavLink } from "@/elements";
+
+const pages = [
+	{
+		label: "active",
+		url: "",
+		order: "00",
+		variant: "active",
+	},
+	{
+		label: "hovered",
+		url: "",
+		order: "01",
+		variant: "hover",
+	},
+	{
+		label: "idel",
+		url: "",
+		order: "02",
+		variant: "",
+	},
+];
 
 export function StyleGuide() {
 	const styles = defineStyle({
@@ -15,6 +39,15 @@ export function StyleGuide() {
 			fontSize: "18px",
 		},
 	});
+
+	const navLink_list = pages.map((page, i) => {
+		return (
+			<NavLink key={i} url={page?.url} num={page?.order} variant={page?.variant}>
+				{page?.label}
+			</NavLink>
+		);
+	});
+
 	return (
 		<Flex direction="column" gap="20" justify="space-between" alignItems="stretch">
 			<Header />
@@ -90,7 +123,9 @@ export function StyleGuide() {
 				</VStack>
 			</HStack>
 			{/* <<--- text section --->>  */}
-			<HStack></HStack>
+			<HStack>
+				<Navbar>{navLink_list}</Navbar>
+			</HStack>
 			{/* <<--- ui section --->>  */}
 		</Flex>
 	);
