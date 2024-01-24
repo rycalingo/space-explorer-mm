@@ -9,19 +9,19 @@ const pages = [
 		label: "active",
 		url: "",
 		order: "00",
-		variant: "active",
+		state: "active",
 	},
 	{
 		label: "hovered",
 		url: "",
 		order: "01",
-		variant: "hover",
+		state: "hover",
 	},
 	{
 		label: "idel",
 		url: "",
 		order: "02",
-		variant: "",
+		state: "base",
 	},
 ];
 
@@ -42,7 +42,7 @@ export default function StyleGuide() {
 
 	const navLink_list = pages.map((page, i) => {
 		return (
-			<NavLink key={i} url={page?.url} num={page?.order} variant={page?.variant}>
+			<NavLink key={i} url={page?.url} num={page?.order} state={page?.state}>
 				{page?.label}
 			</NavLink>
 		);
