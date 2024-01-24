@@ -1,4 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useRouteError } from "react-router-dom";
+
+import PageNotFound from "./page-not-found";
+
+const ErrorBoundary = () => {
+	const error = useRouteError();
+	console.error(error);
+	return <PageNotFound />;
+};
 
 const pages = import.meta.glob("@/pages/**/*.tsx", { eager: true });
 
@@ -17,7 +25,7 @@ for (const path of Object.keys(pages)) {
 		Element: pages[path]?.default,
 		loader: pages[path]?.loader,
 		action: pages[path]?.action,
-		ErrorBoundary: pages[path]?.ErrorBoundary,
+		ErrorBoundary: <ErrorBoundary />,
 	});
 }
 
@@ -26,7 +34,7 @@ const router = createBrowserRouter(
 		...rest,
 		element: <Element />,
 		...(ErrorBoundary && {
-			errorElement: <ErrorBoundary />,
+			errorElement: ErrorBoundary,
 		}),
 	}))
 );
