@@ -8,7 +8,7 @@ interface Props {
 	state?: string;
 }
 
-export function NavLink({ children, url, num, state, ...rest }: Props) {
+export const NavLink = ({ children, url, num, state, ...rest }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	const variant = isHovered ? "hover" : state;
@@ -16,15 +16,13 @@ export function NavLink({ children, url, num, state, ...rest }: Props) {
 	const styles = useStyleConfig("NavLink", { variant });
 
 	return (
-		<Link href={url} sx={styles} {...rest} onMouseEnter={() => (state !== "active" ? setIsHovered(true) : null)} onMouseLeave={() => (state !== "active" ? setIsHovered(false) : null)}>
+		<Link href={url} sx={styles} {...rest} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
 			<Box as="span">
-				{num ? (
-					<Box as="span" textStyle="link_num">
-						{num}{" "}
-					</Box>
-				) : null}
+				<Box as="span" textStyle="link_num" display={["inline", "inline", "none", "inline"]}>
+					{num ? `${num} ` : null}
+				</Box>
 				{children}
 			</Box>
 		</Link>
 	);
-}
+};

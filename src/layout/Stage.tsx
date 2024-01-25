@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import Header from "./Header";
 import { NavLink } from "@/elements";
 import { Navbar } from "@/features";
@@ -30,7 +30,7 @@ const links = [
 	},
 ];
 
-export default function Stage({ children, ...rest }: Props) {
+const Stage = ({ children, ...rest }: Props) => {
 	const navLink_list = links.map((link, i) => {
 		const url = `/${link?.label === "home" ? "" : link?.label}`;
 		const state = url === location.pathname ? "active" : "base";
@@ -43,13 +43,14 @@ export default function Stage({ children, ...rest }: Props) {
 	});
 
 	return (
-		<Container maxW="1240px" w="full" mx="auto" {...rest}>
-			<Header>
-				<Box minW="700px">
+		<Box w="100%" minH="100vh" py={[0, 0, 4]} {...rest}>
+			<Stack w="90%" maxW={["sm, md, lg"]} mx="auto">
+				<Header>
 					<Navbar>{navLink_list}</Navbar>
-				</Box>
-			</Header>
-			{children}
-		</Container>
+				</Header>
+				{children}
+			</Stack>
+		</Box>
 	);
-}
+};
+export default Stage;

@@ -1,15 +1,15 @@
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
-import Logo from "@/elements/Logo";
+import { Logo } from "@/elements";
 
 interface Props {
 	children?: React.ReactNode;
 }
 
-export default function Header({ children }: Props) {
+const Header = ({ children }: Props) => {
 	return (
-		<Box as="header" w="full">
-			<Flex alignItems="center">
-				<Logo />
+		<Box as="header" w="full" py={[0, 0, 10]}>
+			<Flex alignItems={["flex-start", "flex-start", "center"]}>
+				<Logo mt={[4, 4, 0]} />
 				<Spacer />
 				{children ? (
 					<>{children}</>
@@ -21,4 +21,6 @@ export default function Header({ children }: Props) {
 			</Flex>
 		</Box>
 	);
-}
+};
+
+export default Header;
