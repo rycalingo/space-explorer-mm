@@ -6,10 +6,10 @@ import { defineStyle } from "@chakra-ui/react";
 
 interface Props {
 	to: string;
-	size?: string | number;
+	size?: string | number | string[];
 }
 
-export const ExploreButton = ({ to, size = "1.75rem", ...rest }: Props) => {
+export const ExploreButton = ({ to, size = ["1.2rem", "1.2rem", "1.75rem"], ...rest }: Props) => {
 	const [hover, setHover] = useBoolean(false);
 
 	const animationFadeIn = keyframes`
@@ -56,17 +56,17 @@ export const ExploreButton = ({ to, size = "1.75rem", ...rest }: Props) => {
 	});
 
 	return (
-		<Box>
-			<Center {...rest} fontSize={size} flex="1" p="2em">
-				<Square pos="relative">
-					<Circle __css={styles.explore_button} className="explore-button" onMouseEnter={setHover.on} onMouseLeave={setHover.off}>
-						<Link sx={styles.link} href={to}>
-							EXPLORE
-						</Link>
-						<Circle __css={styles.halo} size="145%" as={motion.div} animation={fadeIO}></Circle>
-					</Circle>
-				</Square>
-			</Center>
-		</Box>
+		// <Box>
+		<Center {...rest} fontSize={size} flex="1" p="1.2em" mt={["6rem", "6rem", "0"]}>
+			<Square pos="relative">
+				<Circle __css={styles.explore_button} className="explore-button" onMouseEnter={setHover.on} onMouseLeave={setHover.off}>
+					<Link sx={styles.link} href={to}>
+						EXPLORE
+					</Link>
+					<Circle __css={styles.halo} size="145%" as={motion.div} animation={fadeIO}></Circle>
+				</Circle>
+			</Square>
+		</Center>
+		// </Box>
 	);
 };

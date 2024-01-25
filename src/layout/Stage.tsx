@@ -1,4 +1,4 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Spacer, Stack } from "@chakra-ui/react";
 import Header from "./Header";
 import { NavLink } from "@/elements";
 import { Navbar } from "@/features";
@@ -48,6 +48,7 @@ const Stage = ({ children, ...rest }: Props) => {
 				<Header>
 					<Navbar>{navLink_list}</Navbar>
 				</Header>
+				<Spacer />
 				{children}
 			</Stack>
 		</Box>

@@ -10,9 +10,9 @@ const ChakraStage = chakra(Stage);
 
 export default function Home() {
 	return (
-		<ChakraStage bgImage={[bg_mobile, bg_tablet, bg_desk]} bgPos="center center" bgRepeat="no-repeat" bgSize="200% auto" objectFit="cover">
-			<Stack direction={["column", "column", "row"]} h="600px" justify="flex-end" alignItems="flex-end">
-				<Container>
+		<ChakraStage bgImage={[bg_mobile, bg_tablet, null, bg_desk]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover">
+			<Stack direction={["column", "column", "column", "row"]} h={["auto", null, null, "600px"]} justify="flex-end" alignItems="flex-end">
+				<Container pt={[8, 8, 20]}>
 					<Heading as="h5" variant="h5">
 						SO, YOU WANT TO TRAVEL TO
 					</Heading>

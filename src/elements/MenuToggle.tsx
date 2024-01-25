@@ -9,7 +9,7 @@ interface Props {
 
 export const MenuToggle = ({ toggle, isOpen }: Props) => {
 	return (
-		<Box pt="4" display={{ base: "block", md: "none" }} onClick={toggle} pos="relative" zIndex="10">
+		<Box pt="4" display={{ base: "block", md: "none" }} onClick={toggle} pos="relative" zIndex="1000">
 			{isOpen ? <CloseIcon fontSize={30} /> : <HamburgerIcon fontSize={30} />}
 		</Box>
 	);

@@ -17,6 +17,7 @@ export const Navbar = defineStyleConfig({
     // alignItems: "stretch",
     pos: "absolute",
     right: "0",
+    zIndex: "100"
   },
   variants: {
     closed: {
