@@ -2,7 +2,7 @@ import { defineStyleConfig } from "@chakra-ui/react";
 
 export const Navbar = defineStyleConfig({
   baseStyle: {
-    h: ["100vh","100vh","100px"],
+    h: ["100vh","100vh","100%"],
     w: "65%",
     bg: "brand.10",
     backdropFilter: "blur(40.774227142333984px)",
@@ -16,6 +16,7 @@ export const Navbar = defineStyleConfig({
     // alignContent: "stretch",
     // alignItems: "stretch",
     pos: "absolute",
+    top: [0, 0, 0],
     right: "0",
     zIndex: "100"
   },

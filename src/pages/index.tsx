@@ -11,7 +11,7 @@ const ChakraStage = chakra(Stage);
 export default function Home() {
 	return (
 		<ChakraStage bgImage={[bg_mobile, bg_tablet, bg_desk]}>
-			<Container pt={[8, 8, 20]}>
+			<Container pt={[8, 8, 0]}>
 				<Heading as="h5" variant="h5">
 					SO, YOU WANT TO TRAVEL TO
 				</Heading>

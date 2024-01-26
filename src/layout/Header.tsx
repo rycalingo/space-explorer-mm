@@ -1,24 +1,25 @@
-import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading } from "@chakra-ui/react";
 import { Logo } from "@/elements";
 
 interface Props {
 	children?: React.ReactNode;
 }
 
-const Header = ({ children }: Props) => {
+const Header = ({ children, ...rest }: Props) => {
 	return (
-		<Box as="header" w="full" py={[0, 0, 10]}>
-			<Flex alignItems={["flex-start", "flex-start", "center"]}>
-				<Logo mt={[4, 4, 0]} />
-				<Spacer />
-				{children ? (
-					<>{children}</>
-				) : (
-					<Heading as="h5" variant="h5">
-						DESIGN SYSTEM
-					</Heading>
-				)}
-			</Flex>
+		<Box as="header" w="100vw" top={[0, 0, 0, "32px"]} pos="fixed" {...rest}>
+			<Container maxW={["xl1"]}>
+				<Flex w="100%" h="100px" justifyContent="space-between" alignItems={"center"}>
+					<Logo m="32px" />
+					{children ? (
+						<>{children}</>
+					) : (
+						<Heading as="h5" variant="h5">
+							DESIGN SYSTEM
+						</Heading>
+					)}
+				</Flex>
+			</Container>
 		</Box>
 	);
 };

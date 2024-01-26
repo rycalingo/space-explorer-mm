@@ -35,7 +35,7 @@ export function Navbar({ children, ...rest }: Props) {
 
 	return (
 		<>
-			<Box ref={elementRef} w="100vw" h="100vh" pos="fixed" top="0" left="0" zIndex="-1"></Box>
+			<Box ref={elementRef} w="100vw" pos="fixed" top="0" left="0" zIndex="-100"></Box>
 			<MenuToggle toggle={toggle} isOpen={isOpen} />
 			<Box as="nav" __css={styles} {...rest}>
 				{children}

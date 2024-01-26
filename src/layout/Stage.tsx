@@ -43,17 +43,20 @@ const Stage = ({ children, ...rest }: Props) => {
 	});
 
 	return (
-		<Box w="100%" minH="100vh" py={[0, 0, 4]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" {...rest}>
-			<Stack w="90%" maxW={["sm, md, lg"]} mx="auto">
-				<Header>
-					<Navbar>{navLink_list}</Navbar>
-				</Header>
+		<>
+			<Header>
+				<Navbar>{navLink_list}</Navbar>
+			</Header>
+			<Box w="100%" minH="100vh" py={[0, 0, 4]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" {...rest}>
+				<Box h="120px"></Box>
 				<Spacer />
-				<Stack direction={["column", "column", "column", "row"]} h={["auto", null, null, "600px"]} justify="flex-end" alignItems="flex-end">
-					{children}
+				<Stack w="90%" maxW={["sm, md, lg"]} mx="auto">
+					<Stack direction={["column", "column", "column", "row"]} h={["auto", null, null, "600px"]} justify="flex-end" alignItems="flex-end">
+						{children}
+					</Stack>
 				</Stack>
-			</Stack>
-		</Box>
+			</Box>
+		</>
 	);
 };
 export default Stage;
