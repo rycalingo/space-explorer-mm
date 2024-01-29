@@ -14,11 +14,11 @@ export const ExploreButton = ({ to, size = ["1.2rem", "1.2rem", "1.75rem"], ...r
 
 	const animationFadeIn = keyframes`
 		0% { opacity: 0; transform: scale(0.5,0.5); }
-		100% { opacity: 0.1; transform: scale(1,1);}
+		100% { opacity: 0.2; transform: scale(1,1);}
 	`;
 
 	const animationFadeOut = keyframes`
-		0% { opacity: 0.1; transform: scale(1,1); }
+		0% { opacity: 0.2; transform: scale(1,1); }
 		100% { opacity: 0; transform: scale(0.5,0.5); }
 	`;
 
@@ -35,15 +35,22 @@ export const ExploreButton = ({ to, size = ["1.2rem", "1.2rem", "1.75rem"], ...r
 		},
 
 		link: {
+			lineHeight: "0",
+			p: "2.5em",
 			color: "brand.300",
 			fontFamily: "Heading",
 			fontSize: "1em",
 			pos: "relative",
 			zIndex: "2",
+			borderRadius: "50%",
+			aspectRatio: "1/1",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
 		},
 
 		explore_button: {
-			p: "2.5em",
+			// p: "2.5em",
 			bgColor: "brand.100",
 			color: "brand.300",
 			fontFamily: "heading",
@@ -57,11 +64,11 @@ export const ExploreButton = ({ to, size = ["1.2rem", "1.2rem", "1.75rem"], ...r
 
 	return (
 		// <Box>
-		<Center {...rest} fontSize={size} flex="1" p="1.2em" mt={["6rem", "6rem", "0"]}>
+		<Center {...rest} fontSize={size} flex="1" mt={["6rem", "6rem", "0"]}>
 			<Square pos="relative">
 				<Circle __css={styles.explore_button} className="explore-button" onMouseEnter={setHover.on} onMouseLeave={setHover.off}>
 					<Link sx={styles.link} href={to}>
-						EXPLORE
+						<span>EXPLORE</span>
 					</Link>
 					<Circle __css={styles.halo} size="145%" as={motion.div} animation={fadeIO}></Circle>
 				</Circle>
