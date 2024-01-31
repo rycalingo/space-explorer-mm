@@ -30,7 +30,7 @@ export interface Tech {
 }
 
 export interface Page {
-  destinations?: Dest 
-  crew?: Crew
-  technology?: Tech
+  destinations?: Dest[]
+  crew?: Crew[]
+  technology?: Tech[]
 }
