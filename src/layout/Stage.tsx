@@ -1,4 +1,4 @@
-import { Box, Spacer, Stack } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Stack } from "@chakra-ui/react";
 import Header from "./Header";
 import { NavLink } from "@/elements";
 import { Navbar } from "@/features";
@@ -46,15 +46,13 @@ const Stage = ({ children, ...rest }: Props) => {
 		<>
 			<Header>
 				<Navbar>{navLink_list}</Navbar>
+				<Box as="hr" layerStyle="bar" pos="absolute" left="150px" zIndex="110" w="30%"></Box>
 			</Header>
 			<Box w="100%" minH="100vh" py={[0, 0, 4]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" {...rest}>
-				<Box h="120px"></Box>
-				<Spacer />
-				<Stack w="90%" maxW={["sm, md, lg"]} mx="auto">
-					<Stack direction={["column", "column", "column", "row"]} h={["auto", null, null, "600px"]} justify="flex-end" alignItems="flex-end">
-						{children}
-					</Stack>
-				</Stack>
+				<Box h="100px" pt="40px"></Box>
+				<Box w="90%" maxW={["sm, md, lg"]} mx="auto">
+					{children}
+				</Box>
 			</Box>
 		</>
 	);

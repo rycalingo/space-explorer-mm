@@ -25,7 +25,7 @@ export const headingStyles = {
     },
     h5: {
       fontFamily: "condensed",
-      fontSize: ["1rem", null, "calc(28/16 * 1rem)",],
+      fontSize: ["1rem", null, "calc(28/16 * 1rem)"],
       letterSpacing: ["calc(2.7/16 * 1rem)", "calc(2.7/16 * 1rem)", "calc(4.75/16 * 1rem)"],
       color: "brand.200",
       mb: ["1rem", "1rem", "1rem"],

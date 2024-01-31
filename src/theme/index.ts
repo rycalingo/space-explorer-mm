@@ -26,8 +26,17 @@ const main = {
 
 		link_num: {
 			fontFamily: "condensed",
-			fontSize: "1rem",
+			fontSize: "1em",
 			fontWeight: "700",
+		},
+	},
+
+	layerStyles: {
+		
+		bar: {
+			w: "100%",
+			borderWidth: "1px",
+			borderColor: "#383B4B",
 		},
 	},
 
