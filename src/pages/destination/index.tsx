@@ -47,9 +47,9 @@ export default function Destination() {
 
 		const img = (
 			<TabItem key={name + i} index={i}>
-				<Square size={["sm"]}>
-					<Image src={src} alt="" width={["530px"]} mx="auto" />
-				</Square>
+				{/* <Flex mx="auto" justify="center"> */}
+				<Image src={src} alt="" w={["530px", "530px", "1030px"]} mx="auto" />
+				{/* </Flex> */}
 			</TabItem>
 		);
 
@@ -62,17 +62,17 @@ export default function Destination() {
 	});
 
 	return (
-		<ChakraStage bgImage={[bg_mobile, bg_tablet, bg_desk]}>
-			<Box mt={["120px"]} mx={["80px"]}>
-				<Heading as="h5" variant="h5">
+		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]}>
+			<Box mt={["10px", "0", "120px"]} mb={["40px"]} mx={["auto", "auto", "80px"]}>
+				<Heading as="h5" variant="h5" textAlign={["center", "center", "left"]}>
 					<Box as="span" textStyle="link_num" opacity="0.25">
 						01
 					</Box>{" "}
 					Pick Your Destination
 				</Heading>
-				<ChakraTabContainer w={["100%"]} minH={["xs", "sm", "md"]} mt={["60px"]} ml={["60px"]}>
-					<Stack direction={["column", "column", "row", "row"]} spacing={[50]} justifyContent={["center", "center", "space-bettween"]}>
-						<Box alignSelf="center" mx={["40px"]}>
+				<ChakraTabContainer w={["100%"]} minW={["xs", "sm", "md"]} mt={["60px"]} ml={["auto", "60px"]} mr={["auto", "0"]}>
+					<Stack direction={["column", "column", "row", "row"]} justifyContent={["center", "center", "space-bettween"]} alignContent={"center"} gap="60px">
+						<Box pt="20px" mx={["0", "auto", "40px"]} className="images">
 							<TabSections>{image_sections}</TabSections>
 						</Box>
 						<Box>

@@ -4,7 +4,7 @@ import logo from "../assets/shared/logo.svg";
 export const Logo = ({ ...rest }) => {
 	return (
 		<Box {...rest}>
-			<Image src={logo} alt="Home Logo" />
+			<Image src={logo} width={["32px", "32px", "100%"]} alt="Home Logo" />
 		</Box>
 	);
 };

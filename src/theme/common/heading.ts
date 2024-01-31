@@ -15,7 +15,7 @@ export const headingStyles = {
       mb: ["0.5rem", "0.5rem", "1rem"],
     },
     h2: {
-      fontSize: "calc(100/16 * 1rem)",
+      fontSize: ["56px", "calc(100/16 * 1rem)"],
     },
     h3: {
       fontSize: "calc(56/16 * 1rem)",

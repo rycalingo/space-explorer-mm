@@ -15,7 +15,7 @@ const ChakraStage = chakra(Stage);
 
 export default function Technology() {
 	return (
-		<ChakraStage bgImage={[bg_mobile, bg_tablet, bg_desk]}>
+		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]}>
 			<Heading>Technology</Heading>
 		</ChakraStage>
 	);

@@ -2,7 +2,7 @@ import { defineStyleConfig } from "@chakra-ui/react";
 
 export const TabButton = defineStyleConfig({
   baseStyle: {
-    fontSize: "16px",
+    fontSize: ["14px", "16px"],
     fontFamily: "condensed",
     fontWeight: "400",
     lineHeight: "1.1em",
@@ -20,7 +20,7 @@ export const TabButton = defineStyleConfig({
   },
   variants: {
     active: {
-      borderColor: "rgba(225,225,225,1)",
+      borderColor: ["rgba(225,225,225,1)"],
       _hover: {
         borderColor: "rgba(225,225,225,1)",
       },

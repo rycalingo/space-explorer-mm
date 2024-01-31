@@ -6,7 +6,7 @@ interface Props {
 
 export const TabRow = ({ children, ...rest }: Props) => {
 	return (
-		<Flex {...rest} w="100%" justifyContent={["center", null, "flex-start"]} gap="12" ml={["auto", null, "0"]} mb={["40px"]}>
+		<Flex {...rest} w="100%" justifyContent={["center", null, "flex-start"]} gap={["4", "12"]} ml={["auto", null, "0"]} mt={["60px", null, 0]} mb={["40px"]}>
 			{children}
 		</Flex>
 	);

@@ -19,7 +19,7 @@ export const NavLink = defineStyleConfig({
 
   variants: {
     active: {
-      borderColor: "rgba(225,225,225,1)",
+      borderColor: ["rgba(225,225,225,0)", "rgba(225,225,225,0)","rgba(225,225,225,1)"],
     },
     hover: {
       borderColor: "rgba(225,225,225,0.4)",

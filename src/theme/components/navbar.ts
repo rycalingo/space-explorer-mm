@@ -2,9 +2,9 @@ import { defineStyleConfig } from "@chakra-ui/react";
 
 export const Navbar = defineStyleConfig({
   baseStyle: {
-    h: ["100vh","100vh","100%"],
+    h: ["100vh","100vh","100px"],
     w: "65%",
-    bg: "brand.10",
+    bgColor: "brand.10",
     backdropFilter: "blur(40.774227142333984px)",
     pt: [20, 20, 0],
     pl: [10, 10, 0],

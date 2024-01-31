@@ -37,7 +37,7 @@ export const useTabState = () => {
 
 export const TabContainer = ({ children, ...rest }: Props) => {
 	return (
-		<Box p="1px" pos="relative" w={["", "", "", "1024px"]} {...rest}>
+		<Box p="1px" pos="relative" w={["100%"]} {...rest}>
 			<TabStateProvider>{children}</TabStateProvider>
 		</Box>
 	);
@@ -83,7 +83,7 @@ export const TabTemplate = ({ name, description, dist, travel }: TabTemplateProp
 			</Heading>
 			<Text mb="60px">{description}</Text>
 			<Box as="hr" layerStyle="bar" mb="44px"></Box>
-			<Flex gap="32px">
+			<Flex gap="32px" direction={["column", "column", "row"]}>
 				<Box>
 					<Heading as="h6" variant="subheader2">
 						AVG. DISTANCE
