@@ -5,6 +5,7 @@ import { textStyles } from "./common/text"
 
 import { Navbar } from "./components/navbar"
 import { NavLink } from "./components/navlink";
+import { TabButton } from "./components/tab_button";
 
 const main = {
   colors: {
@@ -28,6 +29,12 @@ const main = {
 			fontFamily: "condensed",
 			fontSize: "1em",
 			fontWeight: "700",
+		},
+
+		ui_tab: {
+			fontFamily: "condensed",
+			fontSize: "1em",
+			fontWeight: "400",
 		},
 	},
 
@@ -61,6 +68,7 @@ const main = {
 		Text: textStyles,
 		Navbar,
 		NavLink,
+		TabButton,
 	},
 }
 
