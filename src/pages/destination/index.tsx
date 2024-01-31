@@ -1,6 +1,6 @@
 // import { SiteContext } from "@/app/App";
 import Stage from "@/layout/Stage";
-import { Box, Heading, chakra } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Square, Stack, chakra } from "@chakra-ui/react";
 
 import useSiteContent from "@/features/hooks/useSiteContent";
 
@@ -31,6 +31,7 @@ export default function Destination() {
 	const dest_content = data?.destinations;
 
 	const tab_lables: React.ReactNode[] = [];
+	const image_sections: React.ReactNode[] = [];
 
 	const tab_sections = dest_content?.map((item: Dest, i: number) => {
 		const { name, images, description, distance, travel } = item;
@@ -44,9 +45,18 @@ export default function Destination() {
 
 		const src = images?.png.replace(/^\./, "./src");
 
+		const img = (
+			<TabItem key={name + i} index={i}>
+				<Square size={["sm"]}>
+					<Image src={src} alt="" width={["530px"]} mx="auto" />
+				</Square>
+			</TabItem>
+		);
+
+		image_sections.push(img);
 		return (
 			<TabItem key={name + i} index={i}>
-				<TabTemplate name={name} img={src} description={description} dist={distance} travel={travel} />
+				<TabTemplate name={name} description={description} dist={distance} travel={travel} />
 			</TabItem>
 		);
 	});
@@ -60,9 +70,17 @@ export default function Destination() {
 					</Box>{" "}
 					Pick Your Destination
 				</Heading>
-				<ChakraTabContainer>
-					<TabRow>{tab_lables}</TabRow>
-					<TabSections>{tab_sections}</TabSections>
+				<ChakraTabContainer w={["100%"]} minH={["xs", "sm", "md"]} mt={["60px"]} ml={["60px"]}>
+					<Stack direction={["column", "column", "row", "row"]} spacing={[50]} justifyContent={["center", "center", "space-bettween"]}>
+						<Box alignSelf="center" mx={["40px"]}>
+							<TabSections>{image_sections}</TabSections>
+						</Box>
+						<Box>
+							<TabRow>{tab_lables}</TabRow>
+
+							<TabSections>{tab_sections}</TabSections>
+						</Box>
+					</Stack>
 				</ChakraTabContainer>
 			</Box>
 		</ChakraStage>

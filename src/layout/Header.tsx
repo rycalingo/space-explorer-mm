@@ -7,7 +7,7 @@ interface Props {
 
 const Header = ({ children, ...rest }: Props) => {
 	return (
-		<Box as="header" w="100vw" top={[0, 0, 0, "32px"]} pos="fixed" {...rest}>
+		<Box as="header" w="100vw" top={[0, 0, 0, "32px"]} pos="fixed" zIndex="1" {...rest}>
 			<Container maxW={["xl1"]}>
 				<Flex w="100%" h="100px" justifyContent="space-between" alignItems={"center"}>
 					<Logo m="32px" />

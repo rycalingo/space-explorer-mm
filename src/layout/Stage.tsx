@@ -43,10 +43,10 @@ const Stage = ({ children, ...rest }: Props) => {
 	});
 
 	return (
-		<>
+		<Box>
 			<Header>
 				<Navbar>{navLink_list}</Navbar>
-				<Box as="hr" layerStyle="bar" pos="absolute" left="150px" zIndex="110" w="30%"></Box>
+				<Box as="hr" visibility={["hidden", null, "visible"]} layerStyle="bar" pos="absolute" left="150px" zIndex="110" w="30%"></Box>
 			</Header>
 			<Box w="100%" minH="100vh" py={[0, 0, 4]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" {...rest}>
 				<Box h="100px" pt="40px"></Box>
@@ -54,7 +54,7 @@ const Stage = ({ children, ...rest }: Props) => {
 					{children}
 				</Box>
 			</Box>
-		</>
+		</Box>
 	);
 };
 export default Stage;
