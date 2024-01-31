@@ -51,6 +51,22 @@ export const TabSections = ({ children, ...rest }: Props) => {
 	);
 };
 
+interface TabItemProps extends Props {
+	index: number;
+}
+
+export const TabItem = ({ children, index, ...rest }: TabItemProps) => {
+	const { activeTab } = useTabState();
+
+	const isActive = activeTab !== index ? "none" : "block";
+
+	return (
+		<Box pos="absolute" display={isActive} top="0" {...rest}>
+			{children}
+		</Box>
+	);
+};
+
 interface TabTemplateProps {
 	key?: string | number;
 	name: string;

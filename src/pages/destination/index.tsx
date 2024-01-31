@@ -4,7 +4,7 @@ import { Box, Heading, chakra } from "@chakra-ui/react";
 
 import useSiteContent from "@/features/hooks/useSiteContent";
 
-import { TabContainer } from "@/features/TabContainer";
+import { TabContainer, TabSections, TabItem, TabTemplate } from "@/features/TabContainer";
 
 import { TabRow } from "@/features/TabRow";
 import { TabButton } from "@/elements";
@@ -21,25 +21,34 @@ imageBG.push(imageBG.splice(0, 1)[0]);
 
 const [bg_mobile, bg_tablet, bg_desk] = imageBG;
 
+const ChakraStage = chakra(Stage);
 const ChakraTabContainer = chakra(TabContainer);
 const ChakraTabButton = chakra(TabButton);
-const ChakraStage = chakra(Stage);
 
 export default function Destination() {
 	const { data } = useSiteContent();
 
 	const dest_content = data?.destinations;
 
-	const tab_lables = dest_content?.map((item: Dest, i: number) => {
-		const { name } = item;
+	const tab_lables: React.ReactNode[] = [];
+
+	const tab_sections = dest_content?.map((item: Dest, i: number) => {
+		const { name, images, description, distance, travel } = item;
 
 		const label = (
 			<ChakraTabButton key={name + i} index={i}>
 				{name}
 			</ChakraTabButton>
 		);
+		tab_lables.push(label);
 
-		return label;
+		const src = images?.png.replace(/^\./, "./src");
+
+		return (
+			<TabItem key={name + i} index={i}>
+				<TabTemplate name={name} img={src} description={description} dist={distance} travel={travel} />
+			</TabItem>
+		);
 	});
 
 	return (
@@ -53,6 +62,7 @@ export default function Destination() {
 				</Heading>
 				<ChakraTabContainer>
 					<TabRow>{tab_lables}</TabRow>
+					<TabSections>{tab_sections}</TabSections>
 				</ChakraTabContainer>
 			</Box>
 		</ChakraStage>
