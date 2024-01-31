@@ -5,7 +5,7 @@ interface Props {
 	children: React.ReactNode;
 	url?: string;
 	num?: string;
-	state?: string;
+	state?: "active" | "base";
 }
 
 export const NavLink = ({ children, url, num, state, ...rest }: Props) => {
@@ -16,7 +16,7 @@ export const NavLink = ({ children, url, num, state, ...rest }: Props) => {
 	const styles = useStyleConfig("NavLink", { variant });
 
 	return (
-		<Link href={url} sx={styles} {...rest} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+		<Link href={url} sx={styles} {...rest} onMouseEnter={() => (variant !== "active" ? setIsHovered(true) : null)} onMouseLeave={() => setIsHovered(false)}>
 			<Box as="span">
 				<Box as="span" textStyle="link_num" display={["inline", "inline", "none", "inline"]}>
 					{num ? `${num} ` : null}

@@ -9,7 +9,7 @@ export const NavLink = defineStyleConfig({
     alignContent: "center",
     alignItems: "center",
 
-    borderBottom: "2px solid",
+    borderBottom: "4px solid",
     borderColor: "rgba(225,225,225,0.0)",
 
     _focus: {
