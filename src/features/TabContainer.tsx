@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Square, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Image, Square, Stack, Text } from "@chakra-ui/react";
 
 import { createContext, useContext, useState } from "react";
 
@@ -77,13 +77,13 @@ interface TabTemplateProps {
 
 export const TabTemplate = ({ name, description, dist, travel }: TabTemplateProps) => {
 	return (
-		<Box flex="1">
+		<Box mx="0" px="0">
 			<Heading as="h2" variant="h2">
 				{name}
 			</Heading>
 			<Text mb="60px">{description}</Text>
 			<Box as="hr" layerStyle="bar" mb="44px"></Box>
-			<Flex gap="32px" direction={["column", "column", "row"]}>
+			<Flex gap="32px" direction={["column", "row", "row", "row"]} justify={["center", "center", "center", "start"]} justifyContent={["space-around", "space-around", "space-around", "start"]}>
 				<Box>
 					<Heading as="h6" variant="subheader2">
 						AVG. DISTANCE
