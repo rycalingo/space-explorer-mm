@@ -1,4 +1,3 @@
-// import { SiteContext } from "@/app/App";
 import Stage from "@/layout/Stage";
 import { Box, Heading, Image, Stack, chakra } from "@chakra-ui/react";
 
@@ -10,17 +9,9 @@ import { TabButton } from "@/elements";
 
 import { DestTemplate } from "@/layout/template/DestTemplate";
 
-import { Dest } from "@/models/pages";
-
-const images = import.meta.glob("@/assets/destination/background-*.jpg", { eager: true });
-
-const imageBG = [];
-for (let img of Object.keys(images)) {
-	imageBG.push(img);
-}
-imageBG.push(imageBG.splice(0, 1)[0]);
-
-const [bg_mobile, bg_tablet, bg_desk] = imageBG;
+import bg_desk from "@/assets/destination/background-destination-desktop.jpg";
+import bg_tablet from "@/assets/destination/background-destination-tablet.jpg";
+import bg_mobile from "@/assets/destination/background-destination-mobile.jpg";
 
 const ChakraStage = chakra(Stage);
 const ChakraTabContainer = chakra(TabContainer);
@@ -48,13 +39,9 @@ export default function Destination() {
 
 		const img = (
 			<TabItem key={name + i} index={i}>
-				{/* <Flex justifyContent="center" alignContent={["center"]} alignItems={["center"]}> */}
-				{/* <Square size={["50vw", "50vw", "40vw"]} justifyContent={"center"}> */}
 				<Box w={["80%", "80%", "80%", "80%"]} m={"auto"}>
 					<Image src={src} alt="object in space" w={["445px"]} />
 				</Box>
-				{/* </Square> */}
-				{/* </Flex> */}
 			</TabItem>
 		);
 

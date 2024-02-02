@@ -1,15 +1,9 @@
 import Stage from "@/layout/Stage";
 import { Heading, chakra } from "@chakra-ui/react";
 
-const images = import.meta.glob("@/assets/technology/background-*.jpg", { eager: true });
-
-const imageBG = [];
-for (let img of Object.keys(images)) {
-	imageBG.push(img);
-}
-imageBG.push(imageBG.splice(0, 1)[0]);
-
-const [bg_mobile, bg_tablet, bg_desk] = imageBG;
+import bg_desk from "@/assets/technology/background-technology-desktop.jpg";
+import bg_tablet from "@/assets/technology/background-technology-tablet.jpg";
+import bg_mobile from "@/assets/technology/background-technology-mobile.jpg";
 
 const ChakraStage = chakra(Stage);
 
