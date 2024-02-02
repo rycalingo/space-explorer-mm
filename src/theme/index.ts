@@ -6,6 +6,7 @@ import { textStyles } from "./common/text"
 import { Navbar } from "./components/navbar"
 import { NavLink } from "./components/navlink";
 import { TabButton } from "./components/tab_button";
+import { TabLabel } from "./components/tab_label";
 
 const main = {
   colors: {
@@ -48,15 +49,16 @@ const main = {
 	},
 
   styles: {
-    global: () => ({
+    global: () => ({			
+			html: {
+        bg: "brand.300",
+			},
       body: {
 				color: "brand.100",
 				fontFamily: "body",
 				fontSize: "16px",
 				fontWeight: "400",
 				lineHeight: "1.1em",
-
-        bg: "brand.300",
       },
 
     }),
@@ -69,6 +71,7 @@ const main = {
 		Navbar,
 		NavLink,
 		TabButton,
+		TabLabel
 	},
 }
 

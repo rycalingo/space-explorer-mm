@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Header from "./Header";
 import { NavLink } from "@/elements";
 import { Navbar } from "@/features";
@@ -44,14 +44,14 @@ const Stage = ({ children, bkg_image, ...rest }: Props) => {
 	});
 
 	return (
-		<Box bgImage={bkg_image} width={["100%"]} h={["100%", "100%", "100%", "100%", "100vh"]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" pb="40px">
+		<Box minH="100vh" bgImage={bkg_image} w={["100%"]} bgPos="top center" bgRepeat="no-repeat" bgSize="cover" objectFit="cover" backgroundAttachment="fixed">
 			<Box maxW={["100%", "100%", "100%", "2048px"]} mx="auto">
 				<Header>
 					<Navbar>{navLink_list}</Navbar>
 					<Box as="hr" visibility={["hidden", "hidden", "hidden", "visible"]} layerStyle="bar" pos="absolute" left="10%" zIndex="110" w="28%"></Box>
 				</Header>
 			</Box>
-			<Box w={["100%"]} maxW={["100%", "100%", "100%", "1600px"]} mx="auto" px={["auto", "auto", "68px", "68px"]} mt={[0, 0, 20, 20]} py="40px" {...rest}>
+			<Box maxW={["100%", "100%", "100%", "1600px"]} mx="auto" px={["auto", "auto", "68px", "68px"]} mt={[0, 0, 14, 20]} {...rest}>
 				{children}
 			</Box>
 		</Box>

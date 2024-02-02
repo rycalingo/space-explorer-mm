@@ -15,7 +15,8 @@ export const headingStyles = {
       mb: ["0.5rem", "0.5rem", "1rem"],
     },
     h2: {
-      fontSize: ["56px", "calc(100/16 * 1rem)"],
+      fontSize: ["38px","38px","80px","100px"],
+
     },
     h3: {
       fontSize: "calc(56/16 * 1rem)",
@@ -40,6 +41,6 @@ export const headingStyles = {
     },
   },
   defaultProps: {
-    variant: "base",
+    // variant: "base",
   }
 }

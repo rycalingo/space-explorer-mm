@@ -58,10 +58,10 @@ interface TabItemProps extends Props {
 export const TabItem = ({ children, index, ...rest }: TabItemProps) => {
 	const { activeTab } = useTabState();
 
-	const isActive = activeTab !== index ? "none" : "block";
+	const isActive = activeTab !== index ? "0" : "auto";
 
 	return (
-		<Box display={isActive} {...rest}>
+		<Box h={isActive} overflow="hidden" {...rest}>
 			{children}
 		</Box>
 	);

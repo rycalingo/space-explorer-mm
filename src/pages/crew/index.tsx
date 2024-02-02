@@ -1,22 +1,77 @@
 import Stage from "@/layout/Stage";
-import { Heading, chakra } from "@chakra-ui/react";
+import { CrewTemplate } from "@/layout/template/CrewTemplate";
+import { Box, Flex, HStack, Heading, Image, Stack, chakra } from "@chakra-ui/react";
 
-const images = import.meta.glob("@/assets/crew/background-*.jpg", { eager: true });
+import { TabContainer, TabItem } from "@/features/TabContainer";
 
-const imageBG = [];
-for (let img of Object.keys(images)) {
-	imageBG.push(img);
-}
-imageBG.push(imageBG.splice(0, 1)[0]);
-
-const [bg_mobile, bg_tablet, bg_desk] = imageBG;
+import useSiteContent from "@/features/hooks/useSiteContent";
 
 const ChakraStage = chakra(Stage);
+const ChakraTabContainer = chakra(TabContainer);
+
+import bg_mobile from "@/assets/crew/background-crew-mobile.jpg";
+import bg_tablet from "@/assets/crew/background-crew-tablet.jpg";
+import bg_desk from "@/assets/crew/background-crew-desktop.jpg";
+import { Crew } from "@/models/pages";
+import { TabLabel } from "@/elements/TabLabel";
 
 export default function Crew() {
+	const { data } = useSiteContent();
+
+	const crew_content = data?.crew;
+
+	const tab_lables: React.ReactNode[] = [];
+	const tab_image_sections: React.ReactNode[] = [];
+
+	const tab_sections = crew_content?.map((item, i) => {
+		const { name, images, role, bio } = item;
+		const label = (
+			<TabLabel key={name + i} index={i}>
+				{""}
+			</TabLabel>
+		);
+		tab_lables.push(label);
+
+		const src = images?.png.replace(/^\./, "./src");
+
+		tab_image_sections.push(
+			<TabItem key={name + i} index={i}>
+				<Box h={["260px", "100%"]}>
+					<Image src={src} alt={name} h="100%" mx="auto" mt="2px" objectFit={"contain"} />
+				</Box>
+			</TabItem>
+		);
+
+		return (
+			<TabItem key={name + i} index={i}>
+				<CrewTemplate name={name} role={role} bio={bio} />
+			</TabItem>
+		);
+	});
+
 	return (
 		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]}>
-			<Heading>Crew</Heading>
+			<Heading as="h5" variant="h5" fontSize={["1rem", "1.25rem", "1.75rem"]} ml={["0"]} textAlign={["center", "left", "left", "left"]}>
+				<Box as="span" textStyle="link_num" opacity="0.25">
+					02
+				</Box>{" "}
+				Meet your crew
+			</Heading>
+			<ChakraTabContainer w={["100%"]} maxW={["1600px"]} mt={["100px"]} px={["42px", "42px", "42px", "0"]}>
+				<Flex direction={["column", "column-reverse", "column-reverse", "row-reverse"]} justifyContent={["center"]} alignItems={"center"} gap={["0px", "0px", "0px", "90px"]}>
+					<Stack justify={"end"} px="16px">
+						<Box borderBottom={["1px", "0"]} borderStyle={["solid"]} borderColor={["rgb(151,151,151)"]}>
+							{tab_image_sections}
+						</Box>
+					</Stack>
+					<Flex w={["auto", "auto", "auto", "60%"]} direction={["column", "column-reverse", "column-reverse", "column-reverse"]} justifyContent={["space-between"]} gap={["0", "0", "0", "80px"]}>
+						<HStack mx={["auto", "auto", "auto", "0"]} mt={["30px"]} mb={["40px"]} gap="16px" justify={["center", "center", "center", "left"]}>
+							{tab_lables}
+						</HStack>
+						<Box>{tab_sections}</Box>
+					</Flex>
+				</Flex>
+			</ChakraTabContainer>
 		</ChakraStage>
 	);
 }

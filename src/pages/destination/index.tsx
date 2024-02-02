@@ -67,8 +67,8 @@ export default function Destination() {
 	});
 
 	return (
-		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]}>
-			<Heading as="h5" variant="h5" textAlign={["center", "center", "center", "left"]}>
+		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]} pb="40px">
+			<Heading as="h5" variant="h5" textAlign={["center", "center", "left", "left"]}>
 				<Box as="span" textStyle="link_num" opacity="0.25">
 					01
 				</Box>{" "}
