@@ -14,6 +14,7 @@ import bg_tablet from "@/assets/crew/background-crew-tablet.jpg";
 import bg_desk from "@/assets/crew/background-crew-desktop.jpg";
 import { Crew } from "@/models/pages";
 import { TabLabel } from "@/elements/TabLabel";
+import { CircleButton } from "@/elements/CircleButton";
 
 export default function Crew() {
 	const { data } = useSiteContent();
@@ -27,7 +28,7 @@ export default function Crew() {
 		const { name, images, role, bio } = item;
 		const label = (
 			<TabLabel key={name + i} index={i}>
-				{""}
+				<CircleButton index={i} type="solid"></CircleButton>
 			</TabLabel>
 		);
 		tab_lables.push(label);
@@ -36,7 +37,7 @@ export default function Crew() {
 
 		tab_image_sections.push(
 			<TabItem key={name + i} index={i}>
-				<Box h={["260px", "100%"]}>
+				<Box h={["260px", "100%"]} overflow="visible">
 					<Image src={src} alt={name} h="100%" mx="auto" mt="2px" objectFit={"contain"} />
 				</Box>
 			</TabItem>
@@ -57,12 +58,10 @@ export default function Crew() {
 				</Box>{" "}
 				Meet your crew
 			</Heading>
-			<ChakraTabContainer w={["100%"]} maxW={["1600px"]} mt={["100px"]} px={["42px", "42px", "42px", "0"]}>
+			<ChakraTabContainer w={["100%"]} maxW={["1600px"]} mt={["60px"]} px={["42px", "42px", "42px", "0"]}>
 				<Flex direction={["column", "column-reverse", "column-reverse", "row-reverse"]} justifyContent={["center"]} alignItems={"center"} gap={["0px", "0px", "0px", "90px"]}>
-					<Stack justify={"end"} px="16px">
-						<Box borderBottom={["1px", "0"]} borderStyle={["solid"]} borderColor={["rgb(151,151,151)"]}>
-							{tab_image_sections}
-						</Box>
+					<Stack w={["90vw"]} justify={"end"} px="16px" borderStyle={["solid"]} borderBottom={["1px", "0"]} borderColor={["rgba(151,151,151, 0.4)"]}>
+						<Box>{tab_image_sections}</Box>
 					</Stack>
 					<Flex w={["auto", "auto", "auto", "60%"]} direction={["column", "column-reverse", "column-reverse", "column-reverse"]} justifyContent={["space-between"]} gap={["0", "0", "0", "80px"]}>
 						<HStack mx={["auto", "auto", "auto", "0"]} mt={["30px"]} mb={["40px"]} gap="16px" justify={["center", "center", "center", "left"]}>

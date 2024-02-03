@@ -7,6 +7,7 @@ import { Navbar } from "./components/navbar"
 import { NavLink } from "./components/navlink";
 import { TabButton } from "./components/tab_button";
 import { TabLabel } from "./components/tab_label";
+import { CircleButton } from "./components/circle_button";
 
 const main = {
   colors: {
@@ -22,6 +23,7 @@ const main = {
 		heading: "Bellefair, serif",
 		body: "Barlow, sans-serif",
 		condensed: "'Barlow Condensed', sans-serif",
+		bellefair:  "Bellefair, serif",
 	},
 
 	textStyles: {
@@ -71,7 +73,8 @@ const main = {
 		Navbar,
 		NavLink,
 		TabButton,
-		TabLabel
+		TabLabel,
+		CircleButton,
 	},
 }
 
