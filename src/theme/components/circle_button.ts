@@ -5,6 +5,7 @@ export const CircleButton = defineStyleConfig({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    fontSize: ["1em","1em","1em","2em"],
     lineHeight: "0",
     p:"0.3em",
     borderRadius: "50%",

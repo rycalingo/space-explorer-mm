@@ -51,7 +51,7 @@ export default function Crew() {
 	});
 
 	return (
-		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]}>
+		<ChakraStage bkg_image={[bg_mobile, bg_tablet, bg_desk]} pl={["auto", "auto", "40px", "104px"]} pr={["auto", "auto", "40px", "auto"]}>
 			<Heading as="h5" variant="h5" fontSize={["1rem", "1.25rem", "1.75rem"]} ml={["0"]} textAlign={["center", "left", "left", "left"]}>
 				<Box as="span" textStyle="link_num" opacity="0.25">
 					02

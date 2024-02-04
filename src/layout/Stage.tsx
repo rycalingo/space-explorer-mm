@@ -51,7 +51,7 @@ const Stage = ({ children, bkg_image, ...rest }: Props) => {
 					<Box as="hr" visibility={["hidden", "hidden", "hidden", "visible"]} layerStyle="bar" pos="absolute" left="10%" zIndex="110" w="28%"></Box>
 				</Header>
 			</Box>
-			<Box maxW={["100%", "100%", "100%", "1600px"]} mx="auto" px={["auto", "auto", "68px", "68px"]} mt={[0, 0, 14, 20]} {...rest}>
+			<Box maxW={["100%", "100%", "100%", "1600px"]} mx="auto" mt={[0, 0, 14, 20]} {...rest}>
 				{children}
 			</Box>
 		</Box>

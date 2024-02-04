@@ -15,14 +15,14 @@ export const headingStyles = {
       mb: ["0.5rem", "0.5rem", "1rem"],
     },
     h2: {
-      fontSize: ["38px","38px","80px","100px"],
+      fontSize: ["2.375rem","2.375rem","5rem","6.25rem"],
 
     },
     h3: {
       fontSize: "calc(56/16 * 1rem)",
     },
     h4: {
-      fontSize: "calc(32/16 * 1rem)",
+      fontSize: ["1rem","1.5rem","1.5rem","2rem"],
     },
     h5: {
       fontFamily: "condensed",
