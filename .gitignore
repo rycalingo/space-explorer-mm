@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Never include files
+
+.env
+.env*
+mightymeld.secrets
+mightymeld.secrets*
