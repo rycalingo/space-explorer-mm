@@ -12,7 +12,7 @@ const ChakraTabContainer = chakra(TabContainer);
 import bg_mobile from "@/assets/crew/background-crew-mobile.jpg";
 import bg_tablet from "@/assets/crew/background-crew-tablet.jpg";
 import bg_desk from "@/assets/crew/background-crew-desktop.jpg";
-import { Crew } from "@/models/pages";
+
 import { TabLabel } from "@/elements/TabLabel";
 import { CircleButton } from "@/elements/CircleButton";
 
